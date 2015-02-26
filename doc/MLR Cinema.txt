@@ -1,0 +1,9 @@
+# Modèle créé le : Sat Jan 31 18:25:56 CET 2015 
+FILM (id_film, tarif, date_deb, date_fin, duree, #id_version, #id_genre, #id_restriction) 
+VERSION (id_version, lib_version) 
+GENRE (id_genre, lib_genre) 
+RESTRICTION (id_restriction, lib_restriction) 
+SEANCE (date_seance, #id_film, #id_salle) 
+SALLE (id_salle, capacite) 
+ACHAT (id_achat, date_achat, #date_seance, #type_tarif) 
+TARIF (type_tarif, lib_tarif, prix) 
