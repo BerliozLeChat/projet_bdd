@@ -15,27 +15,28 @@ DROP TABLE Achat CASCADE CONSTRAINTS PURGE;
 -- Création de la base de données
 CREATE TABLE Genre
 (id_genre NUMBER(4) PRIMARY KEY NOT NULL,
-lib_genre VARCHAR2(40));
+lib_genre VARCHAR2(64));
 
 CREATE TABLE Restriction
 (id_restriction NUMBER(4) PRIMARY KEY NOT NULL,
-lib_restriction VARCHAR2(40));
+lib_restriction VARCHAR2(64));
 
 CREATE TABLE Salle
 (id_salle NUMBER(3) PRIMARY KEY NOT NULL,
-capacite NUMBER(5));
+capacite NUMBER(4));
 
 CREATE TABLE Tarif
 (type_tarif NUMBER(4) PRIMARY KEY NOT NULL,
-lib_tarif VARCHAR2(40),
+lib_tarif VARCHAR2(64),
 prix NUMBER(2,2));
 
 CREATE TABLE Version
 (id_version NUMBER(4) PRIMARY KEY NOT NULL,
-lib_version VARCHAR2(40));
+lib_version VARCHAR2(64));
 
 CREATE TABLE Film
 (id_film NUMBER(4) PRIMARY KEY NOT NULL,
+titre VARCHAR2(64),
 tarif NUMBER(4),
 date_deb DATE,
 date_fin DATE,
