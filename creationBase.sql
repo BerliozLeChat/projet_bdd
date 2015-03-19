@@ -37,7 +37,7 @@ capacite number(4));
 create table Tarif
 (id_tarif number(4) primary key not null,
 lib_tarif varchar2(64),
-prix number(2,2));
+prix number(4,2));
 
 create table Version
 (id_version number(4) primary key not null,
