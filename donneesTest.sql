@@ -2,8 +2,6 @@ SET ECHO OFF
 
 prompt Ajout de données de test en cours...
 
-alter session set NLS_TIMESTAMP_FORMAT = 'YYYY-MM-DD HH:MI:SS'
-
 -- -- Insertion de tuples de test dans les tables
 INSERT INTO TARIF VALUES(01, 'Tarif reduit Jeunes', 4.50);
 INSERT INTO TARIF VALUES(02, 'Tarif normal Adulte', 8.00);
@@ -77,9 +75,9 @@ INSERT INTO FILM VALUES(004, 'Fenêtre sur cour', date '2015-02-04', date '2016-
 INSERT INTO FILM VALUES(005, 'Destination Finale', date '2015-01-07', date '2016-02-07', 98, 03, 23, 04);
 INSERT INTO FILM VALUES(006, 'La Cité de la peur', date '2014-12-03', date '2015-01-03', 99, 03, 06, 01);
 
-INSERT INTO SEANCE VALUES(to_date('2015-03-20 21:00:00', 'yyyy-mm-dd hh24:mi:ss'), 001,011);
+--INSERT INTO SEANCE VALUES(to_date('2015-03-20 21:00:00', 'yyyy-mm-dd hh24:mi:ss'), 001,011);
 
---INSERT INTO ACHAT VALUES(1,to_date(Current_TimeStamp, 'yyyy-mm-dd hh24:mi:ss'),011,to_date('2015-03-20 21:00:00', 'yyyy-mm-dd hh24:mi:ss'),02);
+--INSERT INTO ACHAT VALUES(1, current_timestamp, to_date('2015-03-20 21:00:00', 'yyyy-mm-dd hh24:mi:ss'),02);
 
 prompt Insertion de données de test terminé.
 
