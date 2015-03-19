@@ -37,7 +37,6 @@ lib_version varchar2(64));
 create table Film
 (id_film number(4) primary key not null,
 titre varchar2(64),
-tarif number(4),
 date_deb date,
 date_fin date,
 duree number(3),
