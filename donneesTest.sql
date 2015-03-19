@@ -19,7 +19,7 @@ INSERT INTO SALLE VALUES(7, 150);
 INSERT INTO SALLE VALUES(8, 200);
 INSERT INTO SALLE VALUES(9, 1500);
 INSERT INTO SALLE VALUES(10, 1200);
-INSERT INTO SALLE VALUES(11, 100);
+INSERT INTO SALLE VALUES(11, 2);
 
 INSERT INTO RESTRICTION VALUES(1, 'Tout public');
 INSERT INTO RESTRICTION VALUES(2, 'Interdit aux moins de 10 ans');
@@ -85,7 +85,9 @@ INSERT INTO SEANCE VALUES(10, to_date('2015-03-20 22:00:00', 'yyyy-mm-dd hh24:mi
 INSERT INTO SEANCE VALUES(11, to_date('2015-03-21 18:30:00', 'yyyy-mm-dd hh24:mi:ss'), 6, 11);
 INSERT INTO SEANCE VALUES(12, to_date('2015-03-21 21:00:00', 'yyyy-mm-dd hh24:mi:ss'), 6, 11);
 
-INSERT INTO ACHAT VALUES(1, current_timestamp, to_date('2015-03-20 21:00:00', 'yyyy-mm-dd hh24:mi:ss'), 2);
+INSERT INTO ACHAT VALUES(1, current_timestamp, 12, 2);
+INSERT INTO ACHAT VALUES(2, current_timestamp, 12, 2);
+INSERT INTO ACHAT VALUES(3, current_timestamp, 12, 2);
 
 prompt Insertion de données de test terminé.
 
