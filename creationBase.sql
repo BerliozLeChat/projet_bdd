@@ -12,6 +12,15 @@ drop table Film cascade constraints purge;
 drop table Seance cascade constraints purge;
 drop table Achat cascade constraints purge;
 
+drop index index_film_version;
+drop index index_film_genre;
+drop index index_film_restriction;
+drop index index_seance_film;
+drop index index_seance_salle;
+drop index index_achat_salle;
+drop index index_achat_seance;
+drop index index_achat_tarif;
+
 -- Création de la base de données
 create table Genre
 (id_genre number(4) primary key not null,
@@ -45,15 +54,15 @@ id_genre number(4) references Genre(id_genre) on delete set null,
 id_restriction number(4) references Restriction(id_restriction) on delete set null);
 
 create table Seance
-(date_seance datetime primary key not null,
+(date_seance timestamp primary key not null,
 id_film number(4) references Film(id_film) on delete cascade not null,
 id_salle number(3) references Salle(id_salle) on delete cascade not null);
 
 create table Achat
 (id_achat number(8) primary key not null,
-date_achat datetime not null,
+date_achat timestamp not null,
 id_salle number(4) references Salle(id_salle) on delete cascade not null,
-date_seance datetime references Seance(date_seance) on delete cascade not null,
+date_seance timestamp references Seance(date_seance) on delete cascade not null,
 id_tarif number(4) references Tarif(id_tarif) on delete cascade not NULL);
 
 create index index_film_version on Film(id_version);
