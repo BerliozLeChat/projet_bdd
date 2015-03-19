@@ -3,15 +3,6 @@ set echo off
 prompt Mise en place de la base de données...
 
 -- Suppression des tables (si) présentes dans la base avant création
-drop table Genre cascade constraints purge;
-drop table Restriction cascade constraints purge;
-drop table Salle cascade constraints purge;
-drop table Tarif cascade constraints purge;
-drop table Version cascade constraints purge;
-drop table Film cascade constraints purge;
-drop table Seance cascade constraints purge;
-drop table Achat cascade constraints purge;
-
 drop index index_film_version;
 drop index index_film_genre;
 drop index index_film_restriction;
@@ -20,6 +11,15 @@ drop index index_seance_salle;
 drop index index_achat_salle;
 drop index index_achat_seance;
 drop index index_achat_tarif;
+
+drop table Genre cascade constraints purge;
+drop table Restriction cascade constraints purge;
+drop table Salle cascade constraints purge;
+drop table Tarif cascade constraints purge;
+drop table Version cascade constraints purge;
+drop table Film cascade constraints purge;
+drop table Seance cascade constraints purge;
+drop table Achat cascade constraints purge;
 
 -- Création de la base de données
 create table Genre
