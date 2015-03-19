@@ -85,10 +85,11 @@ INSERT INTO SEANCE VALUES(10, to_date('2015-03-20 22:00:00', 'yyyy-mm-dd hh24:mi
 INSERT INTO SEANCE VALUES(11, to_date('2015-03-21 18:30:00', 'yyyy-mm-dd hh24:mi:ss'), 6, 11);
 INSERT INTO SEANCE VALUES(12, to_date('2015-03-21 21:00:00', 'yyyy-mm-dd hh24:mi:ss'), 6, 11);
 
-ALTER SESSION SET NLS_TIMESTAMP_FORMAT = 'yyyy-mm-dd hh24:mi:ss'
+ALTER SESSION SET NLS_TIMESTAMP_FORMAT = 'yyyy-mm-dd hh24:mi:ss';
 INSERT INTO ACHAT VALUES(1,current_timestamp, 12, 2);
 INSERT INTO ACHAT VALUES(2,current_timestamp, 12, 2);
---INSERT INTO ACHAT VALUES(3, current_timestamp, 12, 2);
+INSERT INTO ACHAT VALUES(3, current_timestamp, 12, 2);
+INSERT INTO ACHAT VALUES(3, current_timestamp, 1, 2);
 
 
 prompt Insertion de données de test terminé.

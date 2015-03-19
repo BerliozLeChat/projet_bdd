@@ -2,8 +2,8 @@
 
 -- Vérification du nombre de places restantes avant la réservation --
 show errors;
-create or replace trigger before_insert_achat
-before insert on Achat 
+create or replace trigger before_row_insert_achat_place
+before insert on Achat for each row
 declare
 	places_occupes number;
   max_places number;
@@ -19,8 +19,11 @@ begin
 	if places_occupes >= max_places then
 		raise reserv_error;
 	end if;
-	
-	exception when reserv_error then
-	raise_application_error(-20099,'room is full');
+  
+  exception when reserv_error then
+	raise_application_error(-20002,'salle pleine');
+  
+  
+  
 end;
 
