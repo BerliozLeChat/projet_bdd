@@ -41,20 +41,21 @@ tarif NUMBER(4),
 date_deb DATE,
 date_fin DATE,
 duree NUMBER(3),
-id_version NUMBER(4) REFERENCES Version(id_version),
-id_genre NUMBER(4) REFERENCES Genre(id_genre),
-id_restriction NUMBER(4) REFERENCES Restriction(id_restriction));
+id_version NUMBER(4) REFERENCES Version(id_version) on delete set null,
+id_genre NUMBER(4) REFERENCES Genre(id_genre) on delete set null,
+id_restriction NUMBER(4) REFERENCES Restriction(id_restriction) on delete set null);
 
 CREATE TABLE Seance
 (date_seance DATE PRIMARY KEY NOT NULL,
-id_film NUMBER(4) REFERENCES Film(id_film) NOT NULL,
-id_salle NUMBER(3) REFERENCES Salle(id_salle) NOT NULL);
+id_film NUMBER(4) REFERENCES Film(id_film) on delete cascade not null,
+id_salle NUMBER(3) REFERENCES Salle(id_salle) on delete cascade not null);
 
 CREATE TABLE Achat
 (id_achat NUMBER(8) PRIMARY KEY NOT NULL,
 date_achat DATE NOT NULL,
-date_seance DATE REFERENCES Seance(date_seance) NOT NULL,
-type_tarif NUMBER(4) REFERENCES Tarif(type_tarif) NOT NULL);
+id_film NUMBER(4) REFERENCES Film(id_film) on delete cascade not null,
+date_seance DATE REFERENCES Seance(date_seance) on delete cascade not null,
+type_tarif NUMBER(4) REFERENCES Tarif(type_tarif) on delete cascade not NULL);
 
 prompt Base de données en place.
 
