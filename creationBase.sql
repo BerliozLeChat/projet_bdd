@@ -26,7 +26,7 @@ create table Salle
 capacite number(4));
 
 create table Tarif
-(type_tarif number(4) primary key not null,
+(id_tarif number(4) primary key not null,
 lib_tarif varchar2(64),
 prix number(2,2));
 
@@ -54,7 +54,16 @@ create table Achat
 date_achat date not null,
 id_salle number(4) references Salle(id_salle) on delete cascade not null,
 date_seance date references Seance(date_seance) on delete cascade not null,
-type_tarif number(4) references Tarif(type_tarif) on delete cascade not NULL);
+id_tarif number(4) references Tarif(id_tarif) on delete cascade not NULL);
+
+create index index_film_version on Film(id_version);
+create index index_film_genre on Film(id_genre);
+create index index_film_restriction on Film(id_restriction);
+create index index_seance_film on Seance(id_film);
+create index index_seance_salle on Seance(id_salle);
+create index index_achat_salle on Achat(id_salle);
+create index index_achat_seance on Achat(date_seance);
+create index index_achat_tarif on Achat(id_tarif);
 
 prompt Base de données en place.
 
