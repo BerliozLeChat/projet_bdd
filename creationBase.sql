@@ -45,15 +45,15 @@ id_genre number(4) references Genre(id_genre) on delete set null,
 id_restriction number(4) references Restriction(id_restriction) on delete set null);
 
 create table Seance
-(date_seance date primary key not null,
+(date_seance datetime primary key not null,
 id_film number(4) references Film(id_film) on delete cascade not null,
 id_salle number(3) references Salle(id_salle) on delete cascade not null);
 
 create table Achat
 (id_achat number(8) primary key not null,
-date_achat date not null,
+date_achat datetime not null,
 id_salle number(4) references Salle(id_salle) on delete cascade not null,
-date_seance date references Seance(date_seance) on delete cascade not null,
+date_seance datetime references Seance(date_seance) on delete cascade not null,
 id_tarif number(4) references Tarif(id_tarif) on delete cascade not NULL);
 
 create index index_film_version on Film(id_version);
