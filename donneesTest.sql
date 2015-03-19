@@ -2,6 +2,8 @@ SET ECHO OFF
 
 prompt Ajout de données de test en cours...
 
+alter session set NLS_TIMESTAMP_FORMAT = 'YYYY-MM-DD HH:MI:SS'
+
 -- -- Insertion de tuples de test dans les tables
 INSERT INTO TARIF VALUES(01, 'Tarif reduit Jeunes', 4.50);
 INSERT INTO TARIF VALUES(02, 'Tarif normal Adulte', 8.00);
@@ -19,6 +21,7 @@ INSERT INTO SALLE VALUES(007, 150);
 INSERT INTO SALLE VALUES(008, 200);
 INSERT INTO SALLE VALUES(009, 1500);
 INSERT INTO SALLE VALUES(010, 1200);
+INSERT INTO SALLE VALUES(011, 2);
 
 INSERT INTO RESTRICTION VALUES(01, 'Tout public');
 INSERT INTO RESTRICTION VALUES(02, 'Interdit aux moins de 10 ans');
@@ -66,27 +69,17 @@ INSERT INTO GENRE VALUES(32, 'Thriller');
 INSERT INTO GENRE VALUES(33, 'Troma');
 INSERT INTO GENRE VALUES(34, 'Western');
 
-INSERT INTO ACHAT VALUES(00001, date '2014-12-06', '2014-12-07', 02);
-INSERT INTO ACHAT VALUES(00002, date '2014-12-20', '2014-12-21', 02);
-INSERT INTO ACHAT VALUES(00003, date '2015-01-05', '2015-01-05', 01);
-INSERT INTO ACHAT VALUES(00004, date '2015-01-05', '2015-01-05', 01);
-INSERT INTO ACHAT VALUES(00005, date '2015-01-05', '2015-01-05', 01);
-INSERT INTO ACHAT VALUES(00006, date '2015-02-02', '2015-02-03', 03);
-INSERT INTO ACHAT VALUES(00007, date '2015-02-07', '2015-02-17', 04);
-INSERT INTO ACHAT VALUES(00008, date '2015-03-07', '2015-03-07', 02);
-INSERT INTO ACHAT VALUES(00009, date '2015-03-07', '2015-03-07', 02);
-INSERT INTO ACHAT VALUES(00010, date '2015-03-14', '2015-03-14', 05);
-INSERT INTO ACHAT VALUES(00011, date '2015-03-17', '2015-03-17', 01);
-INSERT INTO ACHAT VALUES(00012, date '2015-03-17', '2015-03-17', 01);
 
-INSERT INTO FILM VALUES(001, "Le bon, la brute et le truand", date '2014-12-03', date '2015-01-03', 161, 02, 34, 01);
-INSERT INTO FILM VALUES(002, "Chappie", date '2015-03-11', date '2015-04-08', 120, 02, 31, 04);
-INSERT INTO FILM VALUES(003, "Indiana Jones et le Temple maudit", date '2015-01-07', date '2015-02-07', 118, 01, 13, 01);
-INSERT INTO FILM VALUES(004, "Fenêtre sur cour", date '2015-02-04', date '2015-04-15', 150, 01, 11, 01);
-INSERT INTO FILM VALUES(005, "Destination Finale", date '2015-01-07', date '2015-02-07', 98, 03, 23, 04);
-INSERT INTO FILM VALUES(006, "La Cité de la peur", date '2014-12-03', date '2015-01-03', 99, 03, 06, 06);
+INSERT INTO FILM VALUES(001,'Le bon, la brute et le truand', date '2014-12-03', date '2016-01-03', 161, 02, 34, 01);
+INSERT INTO FILM VALUES(002, 'Chappie', date '2015-03-11', date '2016-04-08', 120, 02, 31, 04);
+INSERT INTO FILM VALUES(003, 'Indiana Jones et le Temple maudit', date '2015-01-07', date '2016-02-07', 118, 01, 13, 01);
+INSERT INTO FILM VALUES(004, 'Fenêtre sur cour', date '2015-02-04', date '2016-04-15', 150, 01, 11, 01);
+INSERT INTO FILM VALUES(005, 'Destination Finale', date '2015-01-07', date '2016-02-07', 98, 03, 23, 04);
+INSERT INTO FILM VALUES(006, 'La Cité de la peur', date '2014-12-03', date '2015-01-03', 99, 03, 06, 01);
 
-INSERT INTO SEANCE VALUES(date '2014-12-06', HEURE_SEANCE?, 001);
+INSERT INTO SEANCE VALUES(to_date('2015-03-20 21:00:00', 'yyyy-mm-dd hh24:mi:ss'), 001,011);
+
+--INSERT INTO ACHAT VALUES(1,to_date(Current_TimeStamp, 'yyyy-mm-dd hh24:mi:ss'),011,to_date('2015-03-20 21:00:00', 'yyyy-mm-dd hh24:mi:ss'),02);
 
 prompt Insertion de données de test terminé.
 
