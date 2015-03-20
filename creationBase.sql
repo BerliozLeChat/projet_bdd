@@ -64,13 +64,13 @@ date_achat timestamp not null,
 id_seance number(4) references Seance(id_seance) on delete cascade not null,
 id_tarif number(4) references Tarif(id_tarif) on delete cascade not NULL);
 
-create index index_film_version on Film(id_version);
-create index index_film_genre on Film(id_genre);
-create index index_film_restriction on Film(id_restriction);
+--create index index_film_version on Film(id_version);
+--create index index_film_genre on Film(id_genre);
+--create index index_film_restriction on Film(id_restriction);
 create index index_seance_film on Seance(id_film);
 create index index_seance_salle on Seance(id_salle);
 create index index_achat_seance on Achat(id_seance);
-create index index_achat_tarif on Achat(id_tarif);
+--create index index_achat_tarif on Achat(id_tarif);
 
 prompt Base de données en place.
 
