@@ -75,6 +75,8 @@ INSERT INTO FILM VALUES(5, 'Destination Finale', date '2015-01-07', date '2016-0
 INSERT INTO FILM VALUES(6, 'La Cité de la peur', date '2014-12-03', date '2015-01-03', 99, 3, 6, 1);
 
 INSERT INTO SEANCE VALUES(1, to_date('2015-03-16 19:45:00', 'yyyy-mm-dd hh24:mi:ss'), 1, 11);
+INSERT INTO SEANCE VALUES(13, to_date('2015-03-16 20:15:00', 'yyyy-mm-dd hh24:mi:ss'), 1, 11); --erreur salle est occupé
+
 INSERT INTO SEANCE VALUES(2, to_date('2015-03-19 22:45:00', 'yyyy-mm-dd hh24:mi:ss'), 1, 11);
 INSERT INTO SEANCE VALUES(3, to_date('2015-03-18 16:30:00', 'yyyy-mm-dd hh24:mi:ss'), 2, 1);
 INSERT INTO SEANCE VALUES(4, to_date('2015-03-18 18:45:00', 'yyyy-mm-dd hh24:mi:ss'), 2, 1);
@@ -86,10 +88,10 @@ INSERT INTO SEANCE VALUES(11, to_date('2015-03-21 18:30:00', 'yyyy-mm-dd hh24:mi
 INSERT INTO SEANCE VALUES(12, to_date('2015-03-21 21:00:00', 'yyyy-mm-dd hh24:mi:ss'), 6, 11);
 
 ALTER SESSION SET NLS_TIMESTAMP_FORMAT = 'yyyy-mm-dd hh24:mi:ss';
-INSERT INTO ACHAT VALUES(1,current_timestamp, 12, 2);
-INSERT INTO ACHAT VALUES(2,current_timestamp, 12, 2);
-INSERT INTO ACHAT VALUES(3, current_timestamp, 12, 2);
-INSERT INTO ACHAT VALUES(3, current_timestamp, 1, 2);
+INSERT INTO ACHAT VALUES(1,current_timestamp, 12, 2);--ok
+INSERT INTO ACHAT VALUES(2,current_timestamp, 12, 2);--ok
+INSERT INTO ACHAT VALUES(3, current_timestamp, 12, 2);--la salle est pleine
+INSERT INTO ACHAT VALUES(4, current_timestamp, 1, 2); --la séance est terminé
 
 
 prompt Insertion de données de test terminé.

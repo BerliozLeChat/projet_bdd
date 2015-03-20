@@ -8,12 +8,15 @@ declare
 	seance_excep exception;
 begin
 	for seance_record in seance_cursor loop
-	        duree_film := select duree from Film where id_film = seance_record.id_film;
+	        select duree into duree_film from Film where id_film = seance_record.id_film;
 		if (:new.date_seance < (seance_record.date_seance + numtodsinterval(duree_film, 'minute'))) then
 			raise seance_excep;
 		end if;
 	end loop;
 exception
 	when seance_excep then
-		raise_application_error(-200010, 'Erreur: Seance');
+		raise_application_error(-20001, 'Erreur: Seance');
 end;
+/
+
+select * from user_errors;
