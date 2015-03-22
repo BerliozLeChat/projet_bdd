@@ -15,8 +15,11 @@ prompt END   Création des index
 
 prompt START Création des triggers
 @create_trigger/before_row_insert_achat_date.sql
+/
 @create_trigger/before_row_insert_achat_place.sql
+/
 @create_trigger/seance_bef_row_insert_update.sql
+/
 prompt END   Création des triggers
 
 prompt START Création des rôles
