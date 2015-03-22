@@ -1,6 +1,6 @@
 -- Triggers de la base de données --
 
--- Vérification du nombre de places restantes avant la réservation --
+-- Vérification de l'heure de la séance. si la séance a commencé on ne peut plus acheter de place pour celle ci  --
 show errors;
 create or replace trigger before_row_insert_achat_date
 before insert on Achat for each row
