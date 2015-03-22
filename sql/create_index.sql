@@ -8,13 +8,9 @@
 
 -- Suppression des index
 
-drop index index_film_version;
-drop index index_film_genre;
-drop index index_film_restriction;
 drop index index_seance_film;
 drop index index_seance_salle;
 drop index index_achat_seance;
-drop index index_achat_tarif;
 
 -- Création des index
 
